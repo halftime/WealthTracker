@@ -2,6 +2,13 @@
 
 .NET MAUI app for tracking a multi asset portfolio.
 
+<p align="center">
+  <img width="22%" src="https://github.com/user-attachments/assets/d0d8c7b1-b160-4ad9-a44a-e8462bb85b17" />
+  <img width="22%" src="https://github.com/user-attachments/assets/1491a93f-f75d-4166-abae-da499128a777" />
+  <img width="22%" src="https://github.com/user-attachments/assets/e2b716ae-fb3b-4bb7-b604-9fd5bf2b882d" />
+  <img width="22%" src="https://github.com/user-attachments/assets/00c92b14-11be-47bd-874f-396c116af7bb" />
+</p>
+
 ## Supported tickers
 
 - Funds: `V3AA`, `VWCE`, `IWDA`, `SXRS`, `VOLT`
