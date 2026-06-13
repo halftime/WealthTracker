@@ -1,6 +1,6 @@
 # Wealth Tracker
 
-.NET MAUI app for tracking a mixed ETF and precious-metals portfolio.
+.NET MAUI app for tracking a multi asset portfolio.
 
 ## Supported tickers
 
@@ -48,3 +48,4 @@ dotnet build -f net10.0-android \
   -p:JavaSdkDirectory="$JAVA_HOME"
 ```
 
+On Windows, `capture-android-screenshots.cmd` builds the Android app, deploys it to the emulator, opens the Overview, Allocation, Chart, and Buy/Sell screens, and saves PNG screenshots under `screenshots/`.
