@@ -1,0 +1,43 @@
+# Build output
+[Bb]in/
+[Oo]bj/
+
+# Visual Studio / Rider local state
+.vs/
+.idea/
+*.user
+*.rsuser
+*.suo
+*.userosscache
+*.sln.docstates
+
+# VS Code local settings
+.vscode/*
+!.vscode/
+!.vscode/launch.json
+!.vscode/tasks.json
+!.vscode/extensions.json
+
+# NuGet and packaging artifacts
+*.nupkg
+*.snupkg
+packages/
+
+# Android / MAUI publish artifacts
+*.apk
+*.aab
+*.apks
+*.keystore
+*.jks
+*.ipa
+
+# Logs and temporary files
+*.log
+*.tmp
+*.temp
+TestResults/
+
+# OS files
+.DS_Store
+Thumbs.db
+.fake

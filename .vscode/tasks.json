@@ -1,0 +1,62 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Start Android Emulator",
+      "type": "shell",
+      "command": "C:/Users/Pepe/AppData/Local/Android/Sdk/emulator/emulator.exe",
+      "args": [
+        "-avd",
+        "WealthTracker_API_36"
+      ],
+      "isBackground": true,
+      "problemMatcher": {
+        "pattern": {
+          "regexp": "^.*$"
+        },
+        "background": {
+          "activeOnStart": true,
+          "beginsPattern": "^.*$",
+          "endsPattern": "boot completed|INFO    \\| boot completed"
+        }
+      }
+    },
+    {
+      "label": "maui: Build",
+      "type": "shell",
+      "command": "dotnet",
+      "args": [
+        "build",
+        "${workspaceFolder}/WealthTracker.csproj",
+        "-f",
+        "net10.0-android",
+        "-p:AndroidSdkDirectory=C:\\Users\\Pepe\\AppData\\Local\\Android\\Sdk"
+      ],
+      "options": {
+        "env": {
+          "ANDROID_HOME": "C:\\Users\\Pepe\\AppData\\Local\\Android\\Sdk",
+          "ANDROID_SDK_ROOT": "C:\\Users\\Pepe\\AppData\\Local\\Android\\Sdk",
+          "JAVA_HOME": "C:\\Users\\Pepe\\AppData\\Local\\Java\\jdk-21.0.11+10"
+        }
+      },
+      "problemMatcher": "$msCompile",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    },
+    {
+      "label": "android: Deploy to Emulator",
+      "type": "shell",
+      "command": "if ! C:/Users/Pepe/AppData/Local/Android/Sdk/platform-tools/adb.exe get-state >/dev/null 2>&1; then C:/Users/Pepe/AppData/Local/Android/Sdk/emulator/emulator.exe -avd WealthTracker_API_36 >/dev/null 2>&1 & fi && dotnet build \"${workspaceFolder}/WealthTracker.csproj\" -f net10.0-android -p:AndroidSdkDirectory=C:/Users/Pepe/AppData/Local/Android/Sdk -p:EmbedAssembliesIntoApk=true -p:AndroidFastDeploymentType=None && C:/Users/Pepe/AppData/Local/Android/Sdk/platform-tools/adb.exe wait-for-device && C:/Users/Pepe/AppData/Local/Android/Sdk/platform-tools/adb.exe install -r \"${workspaceFolder}/bin/Debug/net10.0-android/com.enlilasko.wealthtracker-Signed.apk\" && C:/Users/Pepe/AppData/Local/Android/Sdk/platform-tools/adb.exe shell am start -n com.enlilasko.wealthtracker/crc64573c98363ff5d3c0.MainActivity",
+      "options": {
+        "env": {
+          "ANDROID_HOME": "C:\\Users\\Pepe\\AppData\\Local\\Android\\Sdk",
+          "ANDROID_SDK_ROOT": "C:\\Users\\Pepe\\AppData\\Local\\Android\\Sdk",
+          "JAVA_HOME": "C:\\Users\\Pepe\\AppData\\Local\\Java\\jdk-21.0.11+10"
+        }
+      },
+      "problemMatcher": []
+    }
+  ]
+}

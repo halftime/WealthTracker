@@ -1,0 +1,20 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Android Emulator Deploy",
+      "type": "node-terminal",
+      "request": "launch",
+      "command": "echo WealthTracker deployed to emulator",
+      "preLaunchTask": "android: Deploy to Emulator"
+    },
+    {
+      "name": ".NET MAUI Android",
+      "type": "maui",
+      "request": "launch",
+      "preLaunchTask": "maui: Build",
+      "project": "${workspaceFolder}/WealthTracker.csproj",
+      "targetFramework": "net10.0-android"
+    }
+  ]
+}
